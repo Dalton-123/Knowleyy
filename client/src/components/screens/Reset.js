@@ -33,7 +33,14 @@ const Reset  = ()=>{
    return (
       <div className="mycard">
           <div className="card auth-card input-field">
-            <h2>Instagram</h2>
+          <img
+          class="d-flex p-2"
+          src="./LogoMakr.png"
+          style={{width:'100px'}}
+          alt="MDB Logo"
+          loading="lazy"
+          // style="margin-top: 2px;"
+        />
             <input
             type="text"
             placeholder="email"

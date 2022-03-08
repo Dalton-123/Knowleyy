@@ -14,16 +14,16 @@ const Posts  = ()=>{
     const { search } = useLocation();
 
     useEffect(()=>{
-       fetch('/getsubpost' ,{
-           headers:{
-               "Authorization":"Bearer "+localStorage.getItem("jwt")
-           }
-       }).then(res=>res.json())
-       .then(result=>{
-           console.log(result)
-           setData(result.posts)
-       })
-    },)
+        fetch('/test' + search,{
+            headers:{
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            }
+        }).then(res=>res.json())
+            .then(result=>{
+                console.log(result)
+                setData(result.posts)
+            })
+    },[search])
 
     const likePost = (id)=>{
           fetch('/like',{
@@ -148,7 +148,7 @@ const Posts  = ()=>{
      <div>
      <h5  style={{fontWeight:'bold'}}>{item.title}</h5>	
        <p>
-       {item.body.slice(0, 200)}
+       {item.body.slice(0, 200)} <Link to={`/post/${item._id}`}> ...Read More</Link>
        </p>
      </div>
    </div>

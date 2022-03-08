@@ -1,5 +1,5 @@
 import React,{useState,useEffect,useContext} from 'react'
-import Posts from './Posts.js'
+import Posts from './SubscribesUserPosts'
 import Side from './SideNav.js'
 import Follow from './Follow'
 import GetCategory from './GetCategories'
@@ -11,7 +11,7 @@ const Home = ()=>{
 
 
 
-  
+
 
 
    return (
@@ -25,7 +25,7 @@ const Home = ()=>{
         </div>
         
    </div>
-   <div class="col-lg-6  mt-4">
+   <div class="col-lg-6 ">
       <Posts   /> 
      </div> 
      <div className="col-md-3 mb-3 sticky-top">

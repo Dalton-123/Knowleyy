@@ -1,0 +1,11 @@
+.post-img{
+    border-radius: 2px;
+    overflow: hidden;
+    width: 100%;
+    max-height: 400px;
+    object-fit: fill;
+  }
+
+  .card{
+    background: red;
+  }

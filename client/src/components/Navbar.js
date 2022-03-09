@@ -93,7 +93,7 @@ const NavBar = ()=>{
         <div class="d-flex">
       
       <Link to="/">
-      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+      <a class="navbar-brand me-2 mb-1  d-flex align-items-center" href="#">
         <img
           src="./LogoMakr.png"
           height="40"

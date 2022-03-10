@@ -22,15 +22,15 @@ router.get('/user/:id',requireLogin,(req,res)=>{
         return res.status(404).json({error:"User not found"})
     })
 })
-router.get('/allusers',reqLogin,(req,res)=>{
-    User.find()
-        .then((users)=>{
-            res.json({users})
-        }).catch(err=>{
-        console.log(err)
-    })
-
-})
+// router.get('/allusers',requireLogin,(req,res)=>{
+//     User.find()
+//         .then((users)=>{
+//             res.json({users})
+//         }).catch(err=>{
+//         console.log(err)
+//     })
+//
+// })
 
 router.put('/follow',requireLogin,(req,res)=>{
     User.findByIdAndUpdate(req.body.followId,{

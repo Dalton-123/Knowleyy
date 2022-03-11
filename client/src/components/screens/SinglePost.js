@@ -221,14 +221,16 @@ const handleUpdate = () => {
                                         return(
                                           <div class=" p-2" key={record._id}>
                                           <div class="d-flex flex-row user-info">
-                                             <img class="rounded-circle" src={record.postedBy.pic} width="40"/>
+                                              <a href="">
+                                                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                                                       width="40"
+                                                       className="border rounded-circle me-2" alt="Avatar" style={{height: '40px'}} />
+                                              </a>
                                               <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">{record.postedBy.name}</span>
-                                              {/* <span class="date text-black-50">Shared publicly - Jan 2020</span> */}
+                                                  <p className="comment-text">{record.text}</p>
                                               </div>
                                           </div>
-                                          <div class="mt-2">
-                                              <p class="comment-text">{record.text}</p>
-                                          </div>
+
                                       </div>
                                         )
                                     })

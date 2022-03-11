@@ -187,7 +187,7 @@ const Posts  = ()=>{
                                         return(
                                             <div className="d-flex mb-3">
                                           <a href="">
-                                              <img src={item.postedBy.pic}
+                                              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
                                                    width="40"
                                                 className="border rounded-circle me-2" alt="Avatar" style={{height: '40px'}} />
                                             </a>

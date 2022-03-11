@@ -3,7 +3,7 @@ import {Link ,useHistory} from 'react-router-dom'
 import {UserContext} from '../App'
 import M from 'materialize-css'
 import {Button,Modal} from 'react-bootstrap'
-import './nav.css'
+
 const NavBar = ()=>{
     const  searchModal = useRef(null)
     const [search,setSearch] = useState('')

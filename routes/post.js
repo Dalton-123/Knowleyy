@@ -160,7 +160,7 @@ router.put('/comment',requireLogin,(req,res)=>{
         new:true
     })
         .populate("postedBy","_id name pic")
-        .populate("comments.postedBy","_id name")
+        .populate("comments.postedBy","_id name pic")
         .sort('-createdAt')
         .exec((err,result)=>{
             if(err){

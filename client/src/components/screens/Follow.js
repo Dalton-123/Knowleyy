@@ -109,7 +109,7 @@ const Follow  = ()=>{
                                        <p className="">Recently Added</p>
 
                                        {
-                                           data.map(item => {
+                                           (data.slice((data.length - 4), data.length)).map(item => {
                                                return (
                                                    <div>
 

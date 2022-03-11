@@ -21,7 +21,6 @@ const Follow  = ()=>{
  
    return (
 
-
        <div>
            <div className="  mb-2 author">
                <nav id="sidebarMenu" className="collapse d-lg-block sidebar collapse ">

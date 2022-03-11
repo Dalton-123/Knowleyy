@@ -91,11 +91,11 @@ function Profile(){
                          <div className="about-text go-to">
                              <h3 className="dark-color">{userProfile.user.name}</h3>
                              <h6 className="theme-color lead">{userProfile.user.email}</h6>
-                            {/* {showfollow?*/}
-                            {/* <button type="button"   onClick={()=>followUser()} class="btn btn-primary">follow</button>*/}
-                            {/*   :*/}
-                            {/*   <button type="button"   onClick={()=>unfollowUser()} class="btn btn-danger">unfollow</button>*/}
-                            {/*}*/}
+                             {showfollow?
+                             <button type="button"   onClick={()=>followUser()} class="btn btn-primary">follow</button>
+                               :
+                               <button type="button"   onClick={()=>unfollowUser()} class="btn btn-danger">unfollow</button>
+                            }
                          </div>
 
 
@@ -178,5 +178,7 @@ function Profile(){
 
 }
 export default Profile
+
+
 
 

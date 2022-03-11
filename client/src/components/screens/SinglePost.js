@@ -117,9 +117,9 @@ const handleUpdate = () => {
 
           <div class="  text-lg-end">
 
-              {id === state._id &&
-              <span onClick={handleShow}><a><i className="fa fa-edit" ></i></a></span>
-              }
+              {/*{id === state._id &&*/}
+              {/*<span onClick={handleShow}><a><i className="fa fa-edit" ></i></a></span>*/}
+              {/*}*/}
 
 
 
@@ -221,7 +221,7 @@ const handleUpdate = () => {
                                         return(
                                           <div class=" p-2" key={record._id}>
                                           <div class="d-flex flex-row user-info">
-                                            {/* <img class="rounded-circle" src={record.postedBy.pic} width="40"/> */}
+                                             <img class="rounded-circle" src={record.postedBy.pic} width="40"/>
                                               <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">{record.postedBy.name}</span>
                                               {/* <span class="date text-black-50">Shared publicly - Jan 2020</span> */}
                                               </div>

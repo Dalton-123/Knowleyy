@@ -186,12 +186,13 @@ const Posts  = ()=>{
                                      (item.comments.slice((item.comments.length - 3), item.comments.length)).map(record=>{
                                         return(
                                             <div className="d-flex mb-3">
-                                            {/* <a href="">
-                                              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp"
+                                          <a href="">
+                                              <img src={item.postedBy.pic}
+                                                   width="40"
                                                 className="border rounded-circle me-2" alt="Avatar" style={{height: '40px'}} />
-                                            </a> */}
+                                            </a>
                                             <div>
-                                              <div className="bg-light rounded-3 ">
+                                              <div className="bg-light rounded-3 ml-1">
                                                 <a href="" className="text-dark mb-0" style={{textDecoration: 'none'}}>
                                                   <strong>{record.postedBy.name}</strong>
                                                 </a>

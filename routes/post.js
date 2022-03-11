@@ -159,8 +159,9 @@ router.put('/comment',requireLogin,(req,res)=>{
     },{
         new:true
     })
+        .populate("postedBy","_id name pic")
         .populate("comments.postedBy","_id name")
-        .populate("postedBy","_id name")
+        .sort('-createdAt')
         .exec((err,result)=>{
             if(err){
                 return res.status(422).json({error:err})

@@ -5,7 +5,7 @@ const Side = ()=>{
   return(
     <div >
     <div class="shadow-lg p-4 mb-2 bg-white author">
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <nav id="sidebarMenu" class=" d-lg-block sidebar  bg-white">
          <div class="position-sticky">
          <div class="list-group list-group-flush mx-3 ">
                  <a

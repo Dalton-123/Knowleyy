@@ -59,7 +59,15 @@ router.post('/signup',(req,res)=>{
   })
 })
 
+router.get('/allusers',(req,res)=>{
+    User.find()
+        .then((users)=>{
+            res.json({users})
+        }).catch(err=>{
+        console.log(err)
+    })
 
+})
 router.post('/signin',(req,res)=>{
     const {email,password} = req.body
     if(!email || !password){

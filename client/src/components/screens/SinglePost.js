@@ -6,7 +6,7 @@ import { useLocation } from "react-router";
 import {Button,Modal} from 'react-bootstrap'
 import GetCategory from './GetCategories'
 import axios from 'axios'
-import './singlePost.css'
+
 const SinglePost = ()=>{
   const location = useLocation();
   const path = location.pathname.split("/")[2];
@@ -94,7 +94,7 @@ const handleUpdate = () => {
 
    
    return (
-<main class=" mb-5">
+<main class=" mb-5 mt-5">
 <div class="container ">
 
   <div class="row">
@@ -108,15 +108,15 @@ const handleUpdate = () => {
       <h1 class="mb-0 h4">{tit}</h1>
     </div>
         <div class="row align-items-center mb-4 mt-3">
-          <div class="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
+          <div class="col-lg-6  text-lg-start mb-3 m-lg-0">
             <img src={userpic} class="rounded-5 shadow-1-strong me-2  rounded-circle"
-              height="35" alt="" loading="lazy" />
+              height="35" width="40" alt="" loading="lazy" />
               
             <a href="" class="text-dark">{user}</a>
           </div>
 
-          <div class="col-lg-6 text-center text-lg-end">
-            <button type="button" class="btn btn-primary px-3 me-1" >
+          <div class="  text-lg-end">
+            <button type="button" class="btn  px-3 me-1"  style={{float:"right"}}>
               <i className="fa fa-edit" onClick={handleShow}></i>
             </button>
             <Modal show={show} onHide={handleClose} animation={false}>
@@ -201,17 +201,18 @@ const handleUpdate = () => {
 
        
       </section> */}
-       <p class="text-center"><strong>Leave an advice</strong></p>
-      <div class="container mt-5">
+       {/*<p class="text-center"><strong>Leave an advice</strong></p>*/}
+      <div class=" mt-5">
     <div class="d-flex row">
         <div class="col-md-8">
+          <h5 style={{color:"black"}}>Advice for crab</h5>
             <div class="d-flex flex-column comment-section">
 
 
             {
                                     comments .map(record=>{
                                         return(
-                                          <div class="bg-white p-2" key={record._id}>
+                                          <div class=" p-2" key={record._id}>
                                           <div class="d-flex flex-row user-info">
                                             {/* <img class="rounded-circle" src={record.postedBy.pic} width="40"/> */}
                                               <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">{record.postedBy.name}</span>
@@ -234,18 +235,18 @@ const handleUpdate = () => {
                         <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span></div>
                     </div>
                 </div> */}
-                <div class="bg-light p-2">
-                    <div class="d-flex flex-row align-items-start">
-                      {/* <img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40"/> */}
-                    <textarea class="form-control ml-1 shadow-none textarea"
-                     value={mycomment}
-                     onChange={(e)=>setMyComment(e.target.value)}
-                    
-                    
-                    >
-                      </textarea></div>
-                    <div class="mt-2 text-right"><button  onClick={()=>makeComment(mycomment,id)} class="btn btn-primary btn-sm shadow-none" type="button">Post comment</button></div>
-                </div>
+                {/*<div class="bg-light p-2">*/}
+                {/*    <div class="d-flex flex-row align-items-start">*/}
+                {/*      /!* <img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40"/> *!/*/}
+                {/*    <textarea class="form-control ml-1 shadow-none textarea"*/}
+                {/*     value={mycomment}*/}
+                {/*     onChange={(e)=>setMyComment(e.target.value)}*/}
+                {/*    */}
+                {/*    */}
+                {/*    >*/}
+                {/*      </textarea></div>*/}
+                {/*    <div class="mt-2 text-right"><button  onClick={()=>makeComment(mycomment,id)} class="btn btn-primary btn-sm shadow-none" type="button">Post comment</button></div>*/}
+                {/*</div>*/}
             </div>
         </div>
     </div>

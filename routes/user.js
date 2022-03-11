@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
 const requireLogin  = require('../middleware/requireLogin')
+const reqLogin = require("../middleware/requireLogin");
 const Post =  mongoose.model("Post")
 const User = mongoose.model("User")
 
@@ -22,15 +23,18 @@ router.get('/user/:id',requireLogin,(req,res)=>{
         return res.status(404).json({error:"User not found"})
     })
 })
-// router.get('/allusers',requireLogin,(req,res)=>{
-//     User.find()
-//         .then((users)=>{
-//             res.json({users})
-//         }).catch(err=>{
-//         console.log(err)
-//     })
-//
-// })
+
+router.get('/users',requireLogin,(req,res)=>{
+    User.find()
+
+        .then((users)=>{
+            res.json({users})
+        }).catch(err=>{
+        console.log(err)
+    })
+
+})
+
 
 router.put('/follow',requireLogin,(req,res)=>{
     User.findByIdAndUpdate(req.body.followId,{

@@ -23,7 +23,7 @@ const Cat = ()=> {
   return (
     <div className="mt-4">
     <div>
-    <nav id="sidebarMenu" className="collapse d-lg-block sidebar collapse bg-white">
+    <nav id="sidebarMenu" className="collapse d-lg-block sidebar collapse ">
          <div className="position-sticky">
          <div className="list-group list-group-flush mx-3">
              <h5>Categories</h5>

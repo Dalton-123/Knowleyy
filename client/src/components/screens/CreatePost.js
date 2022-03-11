@@ -59,7 +59,12 @@ const CretePost = ()=>{
 
     
    }
- 
+    const test = ()=>{
+
+      console.log(cat)
+
+
+    }
 
    return(
    
@@ -118,18 +123,16 @@ const CretePost = ()=>{
               <option selected>{cat}</option>
               <option value="Music">Music</option>
               <option value="Love">Love</option>
-              <option value="Sport">Sport</option>
+              <option value="Sport">Sports</option>
               <option value="Relationship">Relationship</option>
-              <option value="Romance">Romance</option>
-              <option value="Politics">Politics</option>
-              <option value="Religious">Religious</option>
-              <option value="Drama">Drama</option>
-              <option value="Ideas">Ideas</option>
-              <option value="Finance">Finance</option>
-              <option value="Purpose">Purpose</option>
-              <option value="Nutrition">Nutrition</option>
-              <option value="Business">Business</option>
-            
+              <option value="Romance">Politics</option>
+              <option value="Politics">Religion</option>
+              <option value="Religious">Business</option>
+              <option value="Drama">Health</option>
+              <option value="Ideas">Finance</option>
+
+
+
 
     </select>
            
@@ -139,7 +142,7 @@ const CretePost = ()=>{
 				   onChange={(e)=>setImage(e.target.files[0])} />
 			</div>
 
-     
+              <button type="submit" className="btn btn-primary btn-block mb-4" onClick={() => test()}>vcvcv</button>
             <button type="submit" class="btn btn-primary btn-block mb-4" onClick={()=>postDetails()}>
               Publish
             </button>

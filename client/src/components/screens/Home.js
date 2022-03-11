@@ -17,7 +17,7 @@ const Home = ()=>{
    return (
     <div className='container'>
  <div className='row ' >
- <div class="col-lg-3 mt-4 ">
+ <div class="col-lg-3 mt-3">
        <div className="sticky-top"> 
          <Side/>
         <Follow/>
@@ -25,10 +25,10 @@ const Home = ()=>{
         </div>
         
    </div>
-   <div class="col-lg-6  mt-4">
+   <div class="col-lg-6  ">
       <Posts   /> 
      </div> 
-     <div className="col-md-3 mb-3 sticky-top">
+     <div className="col-md-3  sticky-top">
        <div className="sticky-top"> 
          <GetCategory/>
          </div>

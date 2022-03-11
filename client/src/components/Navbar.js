@@ -20,18 +20,18 @@ const NavBar = ()=>{
        if(state){
            return [
             
-          <li class="nav-item me-3 me-lg-1" onClick={handleShow}>
+          <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}} onClick={handleShow}>
        <a class="nav-link" href="#">
           <span><i class="fas fa-search fa-lg"></i></span>
         </a>
       </li>,
-      <li class="nav-item me-3 me-lg-1">
+      <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>
         <Link to="/create"><a class="nav-link" href="#">
           <span><i class="fas fa-plus-circle fa-lg"></i></span>
         </a></Link>
       </li>,
      
-      <li class="nav-item me-3 me-lg-1">
+      <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>
           <a class="nav-link" href="#"    onClick={()=>{
               localStorage.clear()
               dispatch({type:"CLEAR"})
@@ -40,7 +40,7 @@ const NavBar = ()=>{
             <span><i class="fas fa-sign-out-alt fa-lg"></i></span>
           </a></li>,
 
-          <li class="nav-item me-3 me-lg-1">
+          <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>
        <Link to="/Profile"> <a class="nav-link d-sm-flex align-items-sm-center" href="#">
        <span><i class="fas fa-user-alt fa-lg"></i></span>
           <strong class="d-none d-sm-block ms-1"></strong>
@@ -52,12 +52,12 @@ const NavBar = ()=>{
            ]
        }else{
          return [
-          <li class="nav-item me-3 me-lg-1">
+          <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>
           <a class="nav-link" href="#">
            <Link to="/signup"> <span><i class="fas fa-user-plus fa-lg"></i></span></Link>
           </a>
         </li>,
-          <li class="nav-item me-3 me-lg-1">
+          <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>
           <a class="nav-link" href="#">
             <Link to="/signin"> <span><i class="fas fa-sign-in-alt fa-lg"></i></span></Link>
           </a>
@@ -87,10 +87,10 @@ const NavBar = ()=>{
      
       <div>
    
-        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <nav class="navbar navbar-expand-lg navbar-light " style={{borderBottom:'1px solid lightgrey'}}>
             <div class="container-fluid justify-content-between">
    
-        <div class="d-flex">
+        <div class="d-flex " style={{marginTop:'-20px'}}>
       
       <Link to="/">
       <a class="navbar-brand me-2 mb-1  d-flex align-items-center" href="#">

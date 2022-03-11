@@ -130,10 +130,10 @@ const Posts  = ()=>{
                   <div>
                      <div className="card-body">
      
-     <div className="d-flex mb-3">
+     <div className="d-flex ">
        <a href="">
          <img src={item.postedBy.pic}
-           className="border rounded-circle me-2" alt="Avatar" style={{height: '40px'}} />
+           className="border rounded-circle me-2" width="40" alt="Avatar" style={{height: '40px'}} />
        </a>
        <div>
          <a href="" className="text-dark mb-0">
@@ -221,7 +221,7 @@ const Posts  = ()=>{
        <div className="form-outline w-100">
        <input type="text"   id="" className="form-control form-control-md mw-100"
                         placeholder="leave  an advice" /> 
-         <label className="form-label" for="textAreaExample">Write a comment</label>
+         {/*<label className="form-label" for="textAreaExample">Write a comment</label>*/}
        </div>
      </div>
        </form>

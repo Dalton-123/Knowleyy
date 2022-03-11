@@ -18,7 +18,7 @@ router.get('/allpost',requireLogin,(req,res)=>{
 
 })
 
-router.get("/test", async (req, res) => {
+router.get("/test", requireLogin, async (req, res) => {
 
     const catName = req.query.cat;
     try {
@@ -44,7 +44,7 @@ router.get("/test", async (req, res) => {
 
 
 
-router.get('/post/:id',(req,res)=>{
+router.get('/post/:id',requireLogin,(req,res)=>{
 
     Post.findById(req.params.id)
         .populate("postedBy","_id name pic" ,)

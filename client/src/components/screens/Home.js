@@ -17,25 +17,26 @@ const Home = ()=>{
    return (
     <div className='container'>
  <div className='row ' >
- <div class="col-lg-3 mt-3">
-       <div className="sticky-top"> 
-         <Side/>
-        <Follow/>
-        
-        </div>
-        
-   </div>
+
+     <div className="col-md-3  sticky-top">
+         <div className="sticky-top">
+             <GetCategory/>
+         </div>
+
+     </div>
    <div class="col-lg-6  ">
       <Posts   /> 
-     </div> 
-     <div className="col-md-3  sticky-top">
-       <div className="sticky-top"> 
-         <GetCategory/>
-         </div>
-    
      </div>
-   
-   
+
+
+     <div className="col-lg-3 mt-3">
+         <div className="sticky-top">
+             <Side/>
+             <Follow/>
+
+         </div>
+
+     </div>
  
                   
      

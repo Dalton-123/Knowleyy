@@ -136,7 +136,7 @@ const Posts  = ()=>{
            className="border rounded-circle me-2" width="40" alt="Avatar" style={{height: '40px'}} />
        </a>
        <div>
-         <a href="" className="text-dark mb-0">
+         <a href="" className="" style={{textDecoration:'none !important'}}>
          <Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }><strong>{item.postedBy.name}</strong></Link>
          </a>
         <br/>

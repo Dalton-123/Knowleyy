@@ -59,12 +59,7 @@ const CretePost = ()=>{
 
     
    }
-    const test = ()=>{
 
-      console.log(cat)
-
-
-    }
 
    return(
    
@@ -142,7 +137,7 @@ const CretePost = ()=>{
 				   onChange={(e)=>setImage(e.target.files[0])} />
 			</div>
 
-              <button type="submit" className="btn btn-primary btn-block mb-4" onClick={() => test()}>vcvcv</button>
+
             <button type="submit" class="btn btn-primary btn-block mb-4" onClick={()=>postDetails()}>
               Publish
             </button>

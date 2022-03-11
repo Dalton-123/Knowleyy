@@ -5,7 +5,7 @@ import './profile.css'
 
 function Profile(){
     const [userProfile,setProfile] = useState(null)
-    
+
     const {state,dispatch} = useContext(UserContext)
     const {userid} = useParams()
     const [showfollow,setShowFollow] = useState(state?!state.following.includes(userid):true)
@@ -17,14 +17,14 @@ function Profile(){
        }).then(res=>res.json())
        .then(result=>{
            //console.log(result)
-         
+
             setProfile(result)
        })
     },[])
 
 
     const followUser = ()=>{
-        fetch('http://localhost:4000/follow',{
+        fetch('/follow',{
             method:"put",
             headers:{
                 "Content-Type":"application/json",
@@ -35,7 +35,7 @@ function Profile(){
             })
         }).then(res=>res.json())
         .then(data=>{
-        
+
             dispatch({type:"UPDATE",payload:{following:data.following,followers:data.followers}})
              localStorage.setItem("user",JSON.stringify(data))
              setProfile((prevState)=>{
@@ -51,7 +51,7 @@ function Profile(){
         })
     }
     const unfollowUser = ()=>{
-        fetch('http://localhost:4000/unfollow',{
+        fetch('/unfollow',{
             method:"put",
             headers:{
                 "Content-Type":"application/json",
@@ -62,10 +62,10 @@ function Profile(){
             })
         }).then(res=>res.json())
         .then(data=>{
-            
+
             dispatch({type:"UPDATE",payload:{following:data.following,followers:data.followers}})
              localStorage.setItem("user",JSON.stringify(data))
-            
+
              setProfile((prevState)=>{
                 const newFollower = prevState.user.followers.filter(item=>item != data._id )
                  return {
@@ -77,7 +77,7 @@ function Profile(){
                  }
              })
              setShowFollow(true)
-             
+
         })
     }
     return(
@@ -91,28 +91,28 @@ function Profile(){
                          <div className="about-text go-to">
                              <h3 className="dark-color">{userProfile.user.name}</h3>
                              <h6 className="theme-color lead">{userProfile.user.email}</h6>
-                             {showfollow?
-                             <button type="button"   onClick={()=>followUser()} class="btn btn-primary">follow</button>
-                               : 
-                               <button type="button"   onClick={()=>unfollowUser()} class="btn btn-danger">unfollow</button>
-                            }
+                            {/* {showfollow?*/}
+                            {/* <button type="button"   onClick={()=>followUser()} class="btn btn-primary">follow</button>*/}
+                            {/*   :*/}
+                            {/*   <button type="button"   onClick={()=>unfollowUser()} class="btn btn-danger">unfollow</button>*/}
+                            {/*}*/}
                          </div>
 
 
 
-                         
+
                      </div>
                      <div className="col-lg-3 me">
                          <img style={{width:"160px",height:"160px",borderRadius:"80px"}}
                               src={userProfile.user.pic}
                          />
-                       
-                       
+
+
                      </div>
                  </div>
                  <div className="counter">
                      <div className="row">
-                        
+
                          <div className="col-6 col-lg-4">
                              <div className="count-data text-center">
                                  <h6 className="count h2" data-to="150" data-speed="150">{userProfile.posts.length}</h6>
@@ -152,29 +152,31 @@ function Profile(){
                             <div class="ga-border"></div>
                             <p class="text-muted text-center"><small>{item.postedBy.name}</small></p>
                         </div>
-                    </div>  
+                    </div>
                        )
                    })
                }
 
-                             
 
 
 
-                                
 
-                              
+
+
+
                             </div>
                         </div>
-        
-                     
+
+
 
      </div>
-        
+
         : <h3>loading...!</h3>}
-        
+
         </>
     )
 
 }
 export default Profile
+
+

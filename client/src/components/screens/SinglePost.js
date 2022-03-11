@@ -11,7 +11,7 @@ const SinglePost = ()=>{
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [data,setData] = useState([])
-
+    const {state,dispatch} = useContext(UserContext)
   const [titles, setTitles] = useState("");
   const [bodys, setBodys] = useState("");
   const [pic, setPic] = useState("");
@@ -116,9 +116,16 @@ const handleUpdate = () => {
           </div>
 
           <div class="  text-lg-end">
-            <button type="button" class="btn  px-3 me-1"  style={{float:"right"}}>
-              <i className="fa fa-edit" onClick={handleShow}></i>
-            </button>
+
+              {id === state._id &&
+              <span onClick={handleShow}><a><i className="fa fa-edit" ></i></a></span>
+              }
+
+
+
+            {/*<button type="button" class="btn  px-3 me-1"  style={{float:"right"}}>*/}
+            {/*  <i className="fa fa-edit" onClick={handleShow}></i>*/}
+            {/*</button>*/}
             <Modal show={show} onHide={handleClose} animation={false}>
                     <Modal.Header closeButton>
                         <Modal.Title>Update Post</Modal.Title>

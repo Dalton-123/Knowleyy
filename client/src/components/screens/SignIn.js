@@ -101,7 +101,9 @@ const SignIn  = ()=>{
                   Remember me
                 </label>
               </div>
-              <a href="#!" class="text-body">Forgot password?</a>
+              <a href="#!" class="text-body">
+                  <Link to="/reset">Forgot password?</Link>
+              </a>
             </div>
   
             <div class="text-center text-lg-start mt-4 pt-2">
@@ -117,28 +119,38 @@ const SignIn  = ()=>{
         </div>
       </div>
     </div>
-    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-      
-      <div class="text-white mb-3 mb-md-0">
-        Copyright © 2020. All rights reserved.
-      </div>
+    {/*<div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">*/}
+    {/*  */}
+    {/*  <div class="text-white mb-3 mb-md-0">*/}
+    {/*    Copyright © 2020. All rights reserved.*/}
+    {/*  </div>*/}
     
-      <div>
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="#!" class="text-white">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-      
-    </div>
+    {/*  <div>*/}
+    {/*    <a href="#!" class="text-white me-4">*/}
+    {/*      <i class="fab fa-facebook-f"></i>*/}
+    {/*    </a>*/}
+    {/*    <a href="#!" class="text-white me-4">*/}
+    {/*      <i class="fab fa-twitter"></i>*/}
+    {/*    </a>*/}
+    {/*    <a href="#!" class="text-white me-4">*/}
+    {/*      <i class="fab fa-google"></i>*/}
+    {/*    </a>*/}
+    {/*    <a href="#!" class="text-white">*/}
+    {/*      <i class="fab fa-linkedin-in"></i>*/}
+    {/*    </a>*/}
+    {/*  </div>*/}
+    {/*  */}
+    {/*</div>*/}
+        <footer className="text-center text-white " style={{backgroundColor: ' darkblue'}}>
+
+            <div className="container p-4"></div>
+
+            <div className="text-center p-3" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
+                © 2022 Copyright:
+                <a className="text-white" href="#"> Click.com</a>
+            </div>
+
+        </footer>
   </section>
    )
 }

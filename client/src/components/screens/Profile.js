@@ -76,7 +76,7 @@ function Profile(){
                             <img style={{width:"160px",height:"160px",borderRadius:"80px"}}
                                  src={state?state.pic:"loading"}
                             />
-                            <div className="mb-3">				
+                            <div className="mb-3 d-none d-xl-block">
                             <label htmlFor="formFile" className="form-label">Upload Image</label>
 			         	<input className="form-control" type="file" id="formFile"
 				    onChange={(e)=>updatePhoto(e.target.files[0])}/>

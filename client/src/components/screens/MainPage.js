@@ -92,14 +92,14 @@ const MainPage = () => {
             </div>
           </div>
           <div class="col-lg-6 py-3 wow fadeInRight">
-            <h2 class="title-section">Give<span class="marked"> Advice </span> from others who have overcome difficulties that you are going through</h2>
+            <h2 class="title-section">Get<span class="marked"> Advice </span> from others who have overcome difficulties that you experience so you can overcome them</h2>
             <div class="divider"></div>
             {/* <p>We provide marketing services to startups & small business to looking for partner for their digital media, design & dev lead generation & communication.</p> */}
             <div class="img-place mb-3">
               <img src="testi_image.png" alt=""/>
             </div>
-            <a href="#" class="btn btn-primary">More Details</a>
-            <a href="#" class="btn btn-outline border ml-2">Success Stories</a>
+            {/*<a href="#" class="btn btn-primary">More Details</a>*/}
+            {/*<a href="#" class="btn btn-outline border ml-2">Success Stories</a>*/}
           </div>
         </div>
       </div>
@@ -127,7 +127,7 @@ const MainPage = () => {
       <div class="container">
         <div class="row">
           <div class="col-lg-6 py-3 wow fadeInLeft">
-            <h2 class="title-section">The  <span class="marked">Place </span>to seek friendships from others in from others who experienced what you are going through so they can help</h2>
+            <h2 class="title-section">The  <span class="marked">Place </span>to build friendships and create strong so issues are resolved easier</h2>
             <div class="divider"></div>
             {/* <p class="mb-5">We provide marketing services to startups & small business to looking for partner for their digital media, design & dev lead generation & communication.</p>
             <a href="#" class="btn btn-primary">More Details</a>

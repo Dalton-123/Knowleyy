@@ -20,7 +20,7 @@ const Posts  = ()=>{
             }
         }).then(res=>res.json())
             .then(result=>{
-                console.log(result)
+                // console.log(result)
                 setData(result.posts)
             })
     },[search])
@@ -173,7 +173,7 @@ const Posts  = ()=>{
        <a><span>{item.likes.length} persons had this experience</span></a>
        </div>
        <div>
-       <a className="mr-3"><i className="fa fa-comments"></i>{item.comments.length}</a>
+       <a style={{textDecortion:'none'}} className="mr-3"><i className="fa fa-comments"></i>{item.comments.length}</a>
                       
            {item.postedBy._id == state._id &&
             <span onClick={()=>deletePost(item._id)}><a><i className="fa fa-trash" ></i></a></span>
@@ -187,7 +187,7 @@ const Posts  = ()=>{
                                         return(
                                             <div className="d-flex mb-3">
                                           <a href="">
-                                              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                                              <img src={record.postedBy.pic}
                                                    width="40"
                                                 className="border rounded-circle me-2" alt="Avatar" style={{height: '40px'}} />
                                             </a>

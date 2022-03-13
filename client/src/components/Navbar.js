@@ -96,7 +96,7 @@ const NavBar = ()=>{
       <Link to="/">
       <a class="navbar-brand me-2 mb-1  d-flex align-items-center" href="#">
         <img
-          src="./LogoMakr.png"
+          src="LogoMakr.png"
           height="40"
        
           loading="lazy"

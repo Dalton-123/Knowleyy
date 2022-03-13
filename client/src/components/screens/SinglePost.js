@@ -1,13 +1,14 @@
 
 import React,{useState,useEffect,useContext} from 'react'
 import {UserContext} from '../../App'
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import { useLocation } from "react-router";
 import {Button,Modal} from 'react-bootstrap'
 import GetCategory from './GetCategories'
 import axios from 'axios'
 
 const SinglePost = ()=>{
+
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [data,setData] = useState([])
@@ -18,7 +19,7 @@ const SinglePost = ()=>{
   const [id, setId] = useState("");
   const [user, setUser] = useState("");
   const [mycomment, setMyComment] = useState("");
-  
+
   const [comments, setComments] = useState([]);
   const [userpic, setUserPic] = useState("");
   const [show, setShow] = useState(false);
@@ -28,6 +29,10 @@ const SinglePost = ()=>{
 
   const [tit, setTitle] = useState("");
   const [body, setBody] = useState("");
+
+
+    const {userid} = useParams()
+
   useEffect(()=>{
      fetch('/post/' + path,{
          headers:{
@@ -42,44 +47,44 @@ const SinglePost = ()=>{
    setUserPic(result.posts.postedBy.pic)
    setComments(result.posts.comments)
    setUser(result.posts.postedBy.name)
-   
+
   })
   },[])
 
 
-  const makeComment = (text,postId)=>{
-    fetch('/comment',{
-        method:"put",
-        headers:{
-            "Content-Type":"application/json",
-            "Authorization":"Bearer "+localStorage.getItem("jwt")
-        },
-        body:JSON.stringify({
-            postId,
-            text
+    const makeComment = (text,postId)=>{
+        fetch('/comment',{
+            method:"put",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            },
+            body:JSON.stringify({
+                postId,
+                text
+            })
+        }).then(res=>res.json())
+            .then(result=>{
+                console.log(result)
+                const newData = data.map(item=>{
+                    if(item._id==result._id){
+                        return result
+                    }else{
+                        return item
+                    }
+                })
+                setData(newData)
+            }).catch(err=>{
+            console.log(err)
         })
-    }).then(res=>res.json())
-    .then(result=>{
-        console.log(result)
-        const newData = data.map(item=>{
-          if(item._id==result._id){
-              return result
-          }else{
-              return item
-          }
-       })
-      setData(newData)
-    }).catch(err=>{
-        console.log(err)
-    })
-}
+    }
 
 
 const handleUpdate = () => {
- 
+
   const article = { title:titles,body:bodys };
   console.log(article)
-  const headers = { 
+  const headers = {
       Authorization:"Bearer "+localStorage.getItem("jwt")
   };
   axios.put('/' + path, article, { headers })
@@ -92,15 +97,15 @@ const handleUpdate = () => {
       })
   }
 
-   
+
    return (
 <main class=" mb-5 mt-5">
 <div class="container ">
 
   <div class="row">
-    
+
     <div class="col-md-8 mb-4">
-   
+
       <section class="border-bottom mb-4">
         <img src={pic}
           class="img-fluid shadow-2-strong rounded-5 mb-4 singlepost-img" width="100%" alt="" />
@@ -111,7 +116,7 @@ const handleUpdate = () => {
           <div class="col-lg-6  text-lg-start mb-3 m-lg-0">
             <img src={userpic} class="rounded-5 shadow-1-strong me-2  rounded-circle"
               height="35" width="40" alt="" loading="lazy" />
-              
+
             <a href="" class="text-dark">{user}</a>
           </div>
 
@@ -133,21 +138,21 @@ const handleUpdate = () => {
                     <Modal.Body>
                   <div>
                   <input type="text" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Title" 
+                placeholder="Title"
                 value={titles}
                 onChange={(e)=>setTitles(e.target.value)}
-                
-                
+
+
                 />
                   </div>
                <div>
                <br/>
                <input type="text" id="form3Example4" class="form-control form-control-lg"
-                placeholder=" body" 
+                placeholder=" body"
                 value={bodys}
                 onChange={(e)=>setBodys(e.target.value)}
-                
-                
+
+
                 />
                </div>
 
@@ -161,68 +166,51 @@ const handleUpdate = () => {
                         </Button>
                     </Modal.Footer>
                     </Modal>
-                               
-            
+
+
           </div>
         </div>
       </section>
-      
+
       <section>
         <p>
           {body}
         </p>
 
-        
+
       </section>
-  
-      
-     
-     
-      {/* <section class="border-bottom mb-3">
-        <p class="text-center"><strong>Comments: 3</strong></p>
-  
-        
-        {
-            comments.map(record=>{
-                return(
-                  <div class="row mb-4">
-                  <div class="col-2">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
-                      class="img-fluid rounded-circle shadow-1-strong rounded-5 "  height="50" width="50"  lt="" />
-                  </div>
-                
-                  <div class="col-10">
-                    <p class="mb-2"><strong>{record.postedBy.name}</strong></p>
-                    <p>
-                    {record.text}
-                    </p>
-                  </div>
-                  
-                </div>
-                )
-            })
-        }
-            
 
 
 
-       
-      </section> */}
-       {/*<p class="text-center"><strong>Leave an advice</strong></p>*/}
+
+
       <div class=" mt-5">
     <div class="d-flex row">
         <div class="col-md-8">
           <h5 style={{color:"black"}}>Advice for crab</h5>
+
+            <form onSubmit={(e)=>{
+                e.preventDefault()
+                makeComment(id)
+            }}>
+                <div className="d-flex ">
+                    <div className="form-outline w-100">
+                        <input type="text"   id="" className="form-control form-control-md mw-100"
+                               placeholder="leave  an advice" />
+                        {/*<label className="form-label" for="textAreaExample">Write a comment</label>*/}
+                    </div>
+                </div>
+            </form>
             <div class="d-flex flex-column comment-section">
 
 
             {
-                                    comments .map(record=>{
+                                    comments.map(record=>{
                                         return(
                                           <div class=" p-2" key={record._id}>
                                           <div class="d-flex flex-row user-info">
                                               <a href="">
-                                                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                                                  <img src={record.postedBy.pic}
                                                        width="40"
                                                        className="border rounded-circle me-2" alt="Avatar" style={{height: '40px'}} />
                                               </a>
@@ -236,65 +224,49 @@ const handleUpdate = () => {
                                     })
                                 }
 
-              
-                {/* <div class="bg-white">
-                    <div class="d-flex flex-row fs-12">
-                        <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span class="ml-1">Like</span></div>
-                        <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
-                        <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span></div>
-                    </div>
-                </div> */}
-                {/*<div class="bg-light p-2">*/}
-                {/*    <div class="d-flex flex-row align-items-start">*/}
-                {/*      /!* <img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40"/> *!/*/}
-                {/*    <textarea class="form-control ml-1 shadow-none textarea"*/}
-                {/*     value={mycomment}*/}
-                {/*     onChange={(e)=>setMyComment(e.target.value)}*/}
-                {/*    */}
-                {/*    */}
-                {/*    >*/}
-                {/*      </textarea></div>*/}
-                {/*    <div class="mt-2 text-right"><button  onClick={()=>makeComment(mycomment,id)} class="btn btn-primary btn-sm shadow-none" type="button">Post comment</button></div>*/}
-                {/*</div>*/}
+
+
+
             </div>
+
         </div>
     </div>
 </div>
       <section>
-       
+
 
         <div>
-          
-  
-         
-         
 
-          
-        
 
-        
-          
+
+
+
+
+
+
+
+
         </div>
       </section>
-     
-    </div>
-   
 
- 
+    </div>
+
+
+
     <div class="col-md-4 mb-4">
-    
+
     <GetCategory/>
     </div>
-    
-  
-  
-  
-  
+
+
+
+
+
   </div>
-  
+
 </div>
 </main>
-    
+
    )
 }
 

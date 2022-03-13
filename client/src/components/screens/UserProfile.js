@@ -16,7 +16,7 @@ function Profile(){
            }
        }).then(res=>res.json())
        .then(result=>{
-           //console.log(result)
+           console.log(result)
 
             setProfile(result)
        })
@@ -92,9 +92,12 @@ function Profile(){
                              <h3 className="dark-color">{userProfile.user.name}</h3>
                              <h6 className="theme-color lead">{userProfile.user.email}</h6>
                              {showfollow?
-                             <button type="button"   onClick={()=>followUser()} class="btn btn-primary">follow</button>
+                                 <i className="fa fa-user-plus" style={{color:'green'}} onClick={()=>followUser()} ></i>
+
                                :
-                               <button type="button"   onClick={()=>unfollowUser()} class="btn btn-danger">unfollow</button>
+                                 <i className="fa fa-user-minus" style={{color:'red'}} onClick={()=>unfollowUser()} ></i>
+
+
                             }
                          </div>
 

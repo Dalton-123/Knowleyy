@@ -136,8 +136,8 @@ const Posts  = ()=>{
            className="border rounded-circle me-2" width="40" alt="Avatar" style={{height: '40px'}} />
        </a>
        <div>
-         <a href="" className="" style={{textDecoration:'none !important'}}>
-         <Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }><strong>{item.postedBy.name}</strong></Link>
+         <a href="" className="" >
+         <Link style={{textDecorationColor:'none '}} to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }><strong>{item.postedBy.name}</strong></Link>
          </a>
         <br/>
          <small><span><i className="icon ion-md-pin"></i> <span class="badge badge-secondary">{item.categories}</span></span> - <small className="text-muted">{moment(item.createdAt).fromNow()}</small></small>

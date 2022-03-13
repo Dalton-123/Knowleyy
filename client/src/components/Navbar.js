@@ -26,7 +26,7 @@ const NavBar = ()=>{
           <span><i class="fas fa-search fa-lg"></i></span>
         </a>
       </li>,
-      <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>
+      <li class="nav-item me-3 me-lg-1  d-none d-xl-block" style={{marginTop:'-10px'}}>
         <Link to="/create"><a class="nav-link" href="#">
           <span><i class="fas fa-plus-circle fa-lg"></i></span>
         </a></Link>
@@ -56,7 +56,7 @@ const NavBar = ()=>{
          return [
           <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>
           <a class="nav-link" href="#">
-           <Link to="/signup"> <span><i class="fas fa-user-plus fa-lg"></i></span></Link>
+           <Link to="/signup"> <span><i class="fas fa-user-plus fa-lg d-none d-xl-block"></i></span></Link>
           </a>
         </li>,
           <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>

@@ -38,6 +38,7 @@ const SinglePost = ()=>{
          headers:{
              "Authorization":"Bearer "+localStorage.getItem("jwt")
          }
+
      }).then(res=>res.json())
      .then(result=>{
      setTitle(result.posts.title)

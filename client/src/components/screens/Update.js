@@ -6,7 +6,7 @@ const Update  = ()=>{
     const {state,dispatch} = useContext(UserContext)
   
     useEffect(()=>{
-       fetch('http://localhost:4000/allusers',{
+       fetch('/allusers',{
            headers:{
                "Authorization":"Bearer "+localStorage.getItem("jwt")
            }

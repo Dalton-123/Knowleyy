@@ -197,7 +197,7 @@ const Posts  = ()=>{
                                           {/*               className="border rounded-circle me-2" alt="Avatar" style={{height: '40px'}} />*/}
                                           {/*      </a>*/}
                                             <div>
-                                              <div className="bg-light rounded-3 ">
+                                              <div className=" rounded-3 ">
                                                 <a href="" className="text-dark mb-0" style={{textDecoration: 'none'}}>
                                                   <strong>{record.postedBy.name}</strong>
                                                 </a>

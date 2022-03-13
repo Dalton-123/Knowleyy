@@ -189,18 +189,18 @@ const handleUpdate = () => {
         <div class="col-md-8">
           <h5 style={{color:"black"}}>Advice for crab</h5>
 
-            <form onSubmit={(e)=>{
-                e.preventDefault()
-                makeComment(id)
-            }}>
-                <div className="d-flex ">
-                    <div className="form-outline w-100">
-                        <input type="text"   id="" className="form-control form-control-md mw-100"
-                               placeholder="leave  an advice" />
-                        {/*<label className="form-label" for="textAreaExample">Write a comment</label>*/}
-                    </div>
-                </div>
-            </form>
+            {/*<form onSubmit={(e)=>{*/}
+            {/*    e.preventDefault()*/}
+            {/*    makeComment(id)*/}
+            {/*}}>*/}
+            {/*    <div className="d-flex ">*/}
+            {/*        <div className="form-outline w-100">*/}
+            {/*            <input type="text"   id="" className="form-control form-control-md mw-100"*/}
+            {/*                   placeholder="leave  an advice" />*/}
+            {/*            /!*<label className="form-label" for="textAreaExample">Write a comment</label>*!/*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</form>*/}
             <div class="d-flex flex-column comment-section">
 
 

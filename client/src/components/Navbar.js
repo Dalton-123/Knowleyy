@@ -40,13 +40,14 @@ const NavBar = ()=>{
             }}>
             <span><i class="fas fa-sign-out-alt fa-lg"></i></span>
           </a></li>,
+               <li className="nav-item me-3 me-lg-1" style={{marginTop: '-10px'}}>
+                   <Link to="/profile"><a className="nav-link" href="#">
+                       <img style={{width:"25px",height:"25px",borderRadius:"100px"}}
+                            src={state?state.pic:"loading"}
+                       />
+                   </a></Link>
+               </li>
 
-          <li class="nav-item me-3 me-lg-1" style={{marginTop:'-10px'}}>
-       <Link to="/Profile"> <a class="nav-link d-sm-flex align-items-sm-center" href="#">
-       <span><i class="fas fa-user-alt fa-lg"></i></span>
-          <strong class="d-none d-sm-block ms-1"></strong>
-        </a></Link>
-      </li>
            
          
             

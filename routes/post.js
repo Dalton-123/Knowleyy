@@ -15,8 +15,8 @@ router.get('/getsubpost',requireLogin,(req,res)=>{
 
     // if postedBy in following
     Post.find({postedBy:{$in:req.user.following}})
-        .populate("postedBy","_id name")
-        .populate("comments.postedBy","_id name")
+        .populate("postedBy","_id name pic")
+        .populate("comments.postedBy","_id name pic")
         .sort('-createdAt')
         .then(posts=>{
             res.json({posts})
@@ -170,28 +170,7 @@ router.get('/post/:id',requireLogin,(req,res)=>{
 
 })
 
-// router.get('/SelectedPost/:id',requireLogin,(req,res)=>{
-//     Post.findOne({_id:req.params.id})
-//         .populate("postedBy","_id name pic")
-//         .populate("comments.postedBy","_id name pic")
-//         .sort('-createdAt')
-//         .then((posts)=>{
-//             res.json({posts})
-//         }).catch(err=>{
-//         console.log(err)
-//     })
-// })
-// router.get('/SelectedPost/:id',requireLogin,(req,res)=>{
-//     Post.findOne({_id:req.params.id})
-//         .populate("postedBy","_id name pic")
-//         .populate("comments.postedBy","_id name pic")
-//         .sort('-createdAt')
-//         .then((posts)=>{
-//             res.json({posts})
-//         }).catch(err=>{
-//         console.log(err)
-//     })
-// })
+
 
 
 
